@@ -1,0 +1,3 @@
+<div>
+    admin {{$name}}
+</div>
