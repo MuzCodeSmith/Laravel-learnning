@@ -27,6 +27,8 @@ Route::get('/students',[StudentController::class,'getStudents']);
 Route::get('/clients',[ClientController::class,'getClients']);
 Route::view('/add','add-client');
 Route::post('/add',[ClientController::class,'addClients']);
+Route::put('/update/{id}',[ClientController::class,'updateClient']);
 Route::get('/delete/{id}',[ClientController::class,'deleteClient']);
+Route::get('/edit/{id}',[ClientController::class,'editClient']);
 
 Route::view('/','welcome');

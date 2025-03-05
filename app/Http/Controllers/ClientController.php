@@ -39,4 +39,24 @@ class ClientController extends Controller
         }
     }
 
+    function editClient($id){
+        $client = CLient::find($id);
+        return view('edit-client',['client'=>$client]);
+    }
+
+    function updateClient(Request $request,$id){
+        $client =Client::find($id);
+        $client->name=$request->name;
+        $client->email=$request->email;
+        $client->phone=$request->phone;
+        $client->company=$request->company;
+        $client->country=$request->country;
+        if($client->save()){
+            return redirect('/clients');
+        }else{
+            return "something went wrong while updating client details";
+        }
+
+    }
+
 }
