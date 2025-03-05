@@ -30,4 +30,13 @@ class ClientController extends Controller
         // return view('add-client');
     }
 
+    function deleteClient($id){
+        $client = Client::find($id)->delete();
+        if($client){
+            return redirect('/clients');
+        }else{
+            return "something went wrong while deleting user";
+        }
+    }
+
 }
