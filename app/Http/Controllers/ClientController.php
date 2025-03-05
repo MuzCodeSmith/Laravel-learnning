@@ -13,4 +13,21 @@ class ClientController extends Controller
         return view('clients-table',['clientData'=>$clientData]);
     }
     
+    function addClients(Request $request){
+        $client = new Client;
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->phone = $request->phone;
+        $client->company = $request->company;
+        $client->country = $request->country;
+        $client->save();
+        if($client){
+            echo "data saved successfully!";
+        }else{
+            echo "something went wrong while creating client";
+
+        }
+        // return view('add-client');
+    }
+
 }

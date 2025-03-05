@@ -25,5 +25,8 @@ Route::get('/users',[UserController::class,'users']);
 Route::get('/students',[StudentController::class,'getStudents']);
 
 Route::get('/clients',[ClientController::class,'getClients']);
+Route::view('/add','add-client');
+Route::post('/add',[ClientController::class,'addClients']);
+
 
 Route::view('/','welcome');

@@ -21,7 +21,6 @@
     <td>{{$client->status}}</td>
     <td>
         <a href="{{'delete/'.$client->id}}">Delete</a>
-        
         <a href="{{'edit/'.$client->id}}">Edit</a>
     </td>
 </tr>
